@@ -1,31 +1,21 @@
-name: Challenge1
+name: challenge1
 
 on: push
 
 jobs:
-  job1:
-    name: First job
+  ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - name: "date command"
-        run: date
-  job2:
-    name: Second job
+    - run: date
+  windows: 
     runs-on: windows-latest
     steps:
-      - name: "date command"
-        run: date
-  job3:
-    name: Third job
+    - run: date
+  macos:
     runs-on: macos-latest
     steps:
-      - name: "date command"
-      run: date
-
-  job4:
-    needs: [job1,job2,job3]
+    - run: date
+  depends:
     runs-on: centos-latest
-    name: Forth-job
-    steps:  
-      - name: "date command"
-      run: date
+    steps:
+    - run: date
