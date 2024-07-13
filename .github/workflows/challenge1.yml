@@ -7,30 +7,25 @@ jobs:
     name: First job
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
       - name: "date command"
         run: date
   job2:
     name: Second job
     runs-on: windows-latest
-    - name: checkout
-      uses: actions/checkout@v4
-    - name: "date command"
-      run: date
+    steps:
+      - name: "date command"
+        run: date
   job3:
     name: Third job
     runs-on: macos-latest
-    - name: checkout
-    uses: actions/checkout@v4
-    - name: "date command"
-    run: date
+    steps:
+      - name: "date command"
+      run: date
 
   job4:
-    name: Forth-jon
-    runs-on: centos-latest
     needs: [job1,job2,job3]
-    - name: checkout
-    uses: actions/checkout@v4
-    - name: "date command"
-    run: date
+    runs-on: centos-latest
+    name: Forth-job
+    steps:  
+      - name: "date command"
+      run: date
